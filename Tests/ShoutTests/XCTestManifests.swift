@@ -1,5 +1,6 @@
 import XCTest
 
+#if os(macOS)
 extension SFTPTests {
     static let __allTests = [
         ("testDownload", testDownload),
@@ -18,8 +19,9 @@ extension ShoutTests {
         ("testSendFile", testSendFile),
     ]
 }
+#endif
 
-#if !os(macOS)
+#if os(Linux)
 public func __allTests() -> [XCTestCaseEntry] {
     return [
         testCase(SFTPTests.__allTests),
