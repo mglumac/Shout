@@ -14,6 +14,6 @@ let package = Package(
     targets: [
         .systemLibrary(name: "CSSH", pkgConfig: "libssh2"),
         .target(name: "Shout", dependencies: ["CSSH", "Socket"]),
-        .testTarget(name: "ShoutTests", dependencies: ["Shout"], linkerSettings: [ .linkedLibrary("ssh2"), .unsafeFlags(["-L/usr/local/lib"])]),
+        .testTarget(name: "ShoutTests", dependencies: ["Shout"], linkerSettings: [.unsafeFlags(["-L/usr/local/lib"])]),
     ]
 )
